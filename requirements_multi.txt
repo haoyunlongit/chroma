@@ -1,0 +1,18 @@
+# 核心依赖
+chromadb>=0.4.0
+numpy>=1.21.0
+typing-extensions>=4.0.0
+python-dotenv>=1.0.0
+
+# API选项
+openai>=1.0.0
+httpx>=0.24.0
+requests>=2.28.0
+
+# 本地模型选项
+sentence-transformers>=2.2.0
+torch>=1.13.0
+transformers>=4.21.0
+
+# 中文处理
+jieba>=0.42.1
