@@ -68,7 +68,7 @@ def install_dependencies(choice):
         embedding_type = "local"  # 默认使用本地模型
     
     # 安装依赖
-    pip_cmd = f"pip install {' '.join(deps)}"
+    pip_cmd = f"pip3 install {' '.join(deps)}"
     success = run_command(pip_cmd, "安装Python依赖包")
     
     return success, embedding_type

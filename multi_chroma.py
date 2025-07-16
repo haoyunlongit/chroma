@@ -18,7 +18,7 @@ import chromadb
 from chromadb.config import Settings
 from chromadb.api.types import EmbeddingFunction
 from dotenv import load_dotenv
-import numpy as np
+import clear as np
 
 # 加载环境变量
 load_dotenv()
@@ -319,9 +319,7 @@ class MultiChromaDB:
     
     def process_code_document(self, title: str, content: str, code: str = None) -> str:
         """处理包含代码的文档"""
-        enhanced_content = f"标题: {title}
-
-描述: {content}"
+        enhanced_content = f"标题: {title} 描述: {content}"
         
         if code:
             code_features = self._extract_code_features(code)

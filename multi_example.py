@@ -24,9 +24,9 @@ def test_local_model():
         ]
         
         metadatas = [
-            {"title": "Python编程介绍", "tags": ["python", "programming"], "difficulty": "beginner"},
-            {"title": "机器学习概述", "tags": ["ml", "ai", "data-science"], "difficulty": "intermediate"},
-            {"title": "Vue.js前端框架", "tags": ["javascript", "frontend", "vue"], "difficulty": "beginner"}
+            {"title": "Python编程介绍", "tags": "python,programming", "difficulty": "beginner"},
+            {"title": "机器学习概述", "tags": "ml,ai,data-science", "difficulty": "intermediate"},
+            {"title": "Vue.js前端框架", "tags": "javascript,frontend,vue", "difficulty": "beginner"}
         ]
         
         db.add_documents(documents, metadatas)
@@ -37,7 +37,7 @@ def test_local_model():
         print("🔍 搜索结果:")
         for i, result in enumerate(results):
             print(f"  {i+1}. {result['title']} (相似度: {result['similarity']:.3f})")
-            print(f"     标签: {result['metadata'].get('tags', [])}")
+            print(f"     标签: {result['metadata'].get('tags', '')}")
         
         print("✅ 本地模型测试成功!\n")
         return True
@@ -69,8 +69,8 @@ def test_deepseek_api():
         ]
         
         metadatas = [
-            {"title": "深度学习技术", "tags": ["deep-learning", "neural-network", "ai"]},
-            {"title": "自然语言处理", "tags": ["nlp", "language", "ai"]}
+            {"title": "深度学习技术", "tags": "deep-learning,neural-network,ai"},
+            {"title": "自然语言处理", "tags": "nlp,language,ai"}
         ]
         
         db.add_documents(documents, metadatas)
@@ -110,8 +110,8 @@ def test_openai_api():
         ]
         
         metadatas = [
-            {"title": "Flask Web框架", "tags": ["flask", "python", "web", "api"]},
-            {"title": "FastAPI现代框架", "tags": ["fastapi", "python", "async", "api"]}
+            {"title": "Flask Web框架", "tags": "flask,python,web,api"},
+            {"title": "FastAPI现代框架", "tags": "fastapi,python,async,api"}
         ]
         
         db.add_documents(documents, metadatas)
@@ -227,21 +227,21 @@ const UserProfile = ({ userId }) => {
         metadatas = [
             {
                 "title": "Flask JWT认证中间件",
-                "tags": ["python", "flask", "jwt", "security", "middleware"],
+                "tags": "python,flask,jwt,security,middleware",
                 "programming_language": "python",
                 "domain": "web开发",
                 "difficulty": "intermediate"
             },
             {
                 "title": "机器学习模型训练",
-                "tags": ["python", "ml", "scikit-learn", "data-science"],
+                "tags": "python,ml,scikit-learn,data-science",
                 "programming_language": "python", 
                 "domain": "数据科学",
                 "difficulty": "intermediate"
             },
             {
                 "title": "React用户资料组件",
-                "tags": ["javascript", "react", "component", "frontend"],
+                "tags": "javascript,react,component,frontend",
                 "programming_language": "javascript",
                 "domain": "前端开发", 
                 "difficulty": "beginner"
@@ -272,7 +272,7 @@ const UserProfile = ({ userId }) => {
             for i, result in enumerate(results):
                 print(f"  {i+1}. 【{result['title']}】")
                 print(f"     相似度: {result['similarity']:.3f}")
-                print(f"     标签: {result['metadata'].get('tags', [])}")
+                print(f"     标签: {result['metadata'].get('tags', '')}")
         
         print("\n✅ 代码文档示例完成!")
         
